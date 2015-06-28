@@ -1,0 +1,26 @@
+From 9e6359020d6cccbab10c41cbdcf8868a02fce5aa Mon Sep 17 00:00:00 2001
+From: "wimpknocker@wimpnether" <wimpknocker@wimpnether.net>
+Date: Mon, 29 Jun 2015 00:10:30 +0300
+Subject: [PATCH] 007-Use-GraphicBuffer-Optimize.patch
+
+Change-Id: I854afec083fdeda1c13ebcfa0a6feed29fb6844e
+---
+ media/libstagefright/omx/OMXNodeInstance.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/media/libstagefright/omx/OMXNodeInstance.cpp b/media/libstagefright/omx/OMXNodeInstance.cpp
+index 38667d1..1f5f4c8 100644
+--- a/media/libstagefright/omx/OMXNodeInstance.cpp
++++ b/media/libstagefright/omx/OMXNodeInstance.cpp
+@@ -601,7 +601,7 @@ status_t OMXNodeInstance::useGraphicBuffer(
+     // See if the newer version of the extension is present.
+     OMX_INDEXTYPE index;
+ 
+-#ifndef MTK_HARDWARE
++#ifndef STE_HARDWARE
+     if (OMX_GetExtensionIndex(
+             mHandle,
+             const_cast<OMX_STRING>("OMX.google.android.index.useAndroidNativeBuffer2"),
+-- 
+1.9.1
+
